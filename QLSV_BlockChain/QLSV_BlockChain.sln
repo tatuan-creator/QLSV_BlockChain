@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLSV_BlockChain", "QLSV_BlockChain.csproj", "{A416120D-AC9D-4D2F-B7C7-AEF112E0F5EA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A416120D-AC9D-4D2F-B7C7-AEF112E0F5EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A416120D-AC9D-4D2F-B7C7-AEF112E0F5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A416120D-AC9D-4D2F-B7C7-AEF112E0F5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A416120D-AC9D-4D2F-B7C7-AEF112E0F5EA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E2E14BCE-7008-44A9-916D-F5D45F52C33D}
+	EndGlobalSection
+EndGlobal
