@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="BlockChain_QLSV">
+  <DataContextMoniker Name="/BlockChain_QLSVDataContext" />
+  <nestedChildShapes>
+    <classShape Id="eed8d55c-6bfe-41bb-97a3-81c1816e575a" absoluteBounds="0.75, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/BlockChain_QLSVDataContext/VaiTro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9369bdf-ec33-4800-8bc7-e1245631dd6b" absoluteBounds="0.765, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="041b6d15-7624-4738-b96d-53514266ebd9" absoluteBounds="3.5, 0.875, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/BlockChain_QLSVDataContext/NguoiDung" />
+      <nestedChildShapes>
+        <elementListCompartment Id="278f7431-c2d8-45e1-a03c-a2104a1134f6" absoluteBounds="3.515, 1.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.06814697265625); (3.5 : 2.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlockChain_QLSVDataContext/VaiTro/VaiTro_NguoiDung" />
+      <nodes>
+        <classShapeMoniker Id="eed8d55c-6bfe-41bb-97a3-81c1816e575a" />
+        <classShapeMoniker Id="041b6d15-7624-4738-b96d-53514266ebd9" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
