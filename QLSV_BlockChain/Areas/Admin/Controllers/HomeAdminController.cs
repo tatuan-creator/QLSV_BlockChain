@@ -41,7 +41,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             else if (islogin.MaVaiTro == 2)
             {
                 Session["userAdmin"] = islogin;
-                return RedirectToAction("Quytrinhchuaxacthuc", "KiemDinhs");
+                return Redirect("~/KiemDinh/KiemDinhDiem/Index");
             }
             // Tài khoản đăng nhập là nhà sản xuất
             else if (islogin.MaVaiTro == 3)

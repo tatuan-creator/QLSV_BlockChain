@@ -11,13 +11,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 @{
-    var userAdmin = Session["userAdmin"] as BlockChain_QLSV.Models.NguoiDung;
+    var userAdmin = Session["userAdmin"] as QLSV_BlockChain.Models.NguoiDung;
     //var userNhaSX = Session["userNhaSX"] as Blockchain_MocChauMilk.Models.NguoiDung;
 
 }
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark badge-success">
-        <a class="navbar-brand" href="@Url.Action("Index", "HomeAdmin")"><img src="~/Content/images/logo.jpg" width="130" height="50" /></a>
+        <a class="navbar-brand" href="@Url.Action("Index", "HomeAdmin")"><img src="~/Content/images/logo.png" width="210" height="50" /></a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#">
             <i class="fas fa-bars"></i>
         </button><!-- Navbar Search-->
@@ -113,8 +113,8 @@
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
-                    <div class="small">Thiết kế bởi:</div>
-                    Cường
+                    <div class="small">Đồ án chuyên ngành</div>
+                    Nhóm 10
                 </div>
             </nav>
         </div>
@@ -127,7 +127,7 @@
             <footer class="py-4 bg-light mt-auto">
                 <div class="container-fluid">
                     <div class="d-flex align-items-center justify-content-between small">
-                        <div class="text-muted"> CNTT-HDU &copy; 2020</div>
+                        <div class="text-muted"> CNTT - HUTECH &copy; 2020</div>
                         <div>
                             <a href="#"> Xem thêm</a>
                             &middot;

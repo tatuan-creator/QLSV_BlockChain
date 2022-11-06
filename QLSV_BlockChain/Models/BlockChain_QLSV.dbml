@@ -1,16 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSV_BlockChain" Class="BlockChain_QLSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DDOO\SQLEXPRESS;Initial Catalog=QLSV_BlockChain;User ID=sa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLSV_BlockChainConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.VaiTro" Member="VaiTros">
-    <Type Name="VaiTro">
-      <Column Name="MaVaiTro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenVaiTro" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Thongtinkhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="VaiTro_NguoiDung" Member="NguoiDungs" ThisKey="MaVaiTro" OtherKey="MaVaiTro" Type="NguoiDung" />
-    </Type>
-  </Table>
   <Table Name="dbo.NguoiDung" Member="NguoiDungs">
     <Type Name="NguoiDung">
-      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNguoiDung" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TaiKhoan" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="MatKhau" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
       <Column Name="Mota" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
@@ -18,6 +10,14 @@
       <Column Name="SoE" Type="System.String" DbType="Char(500)" CanBeNull="true" />
       <Column Name="SoN" Type="System.String" DbType="Char(500)" CanBeNull="true" />
       <Association Name="VaiTro_NguoiDung" Member="VaiTro" ThisKey="MaVaiTro" OtherKey="MaVaiTro" Type="VaiTro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VaiTro" Member="VaiTros">
+    <Type Name="VaiTro">
+      <Column Name="MaVaiTro" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenVaiTro" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Thongtinkhoa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="VaiTro_NguoiDung" Member="NguoiDungs" ThisKey="MaVaiTro" OtherKey="MaVaiTro" Type="NguoiDung" />
     </Type>
   </Table>
 </Database>
