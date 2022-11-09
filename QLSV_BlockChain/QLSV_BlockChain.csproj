@@ -124,6 +124,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\VaiTroController.cs" />
     <Compile Include="Areas\KiemDinh\Controllers\ChuKyRSAController.cs" />
     <Compile Include="Areas\KiemDinh\Controllers\KiemDinhDiemController.cs" />
     <Compile Include="Areas\KiemDinh\KiemDinhAreaRegistration.cs" />
@@ -1176,6 +1177,8 @@
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
     <Content Include="Areas\KiemDinh\Views\ChuKyRSA\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\VaiTro\Index.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>

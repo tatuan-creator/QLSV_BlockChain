@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -50,7 +51,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "Tenvaitro", nguoiDung.MaVaiTro);
+            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
             return View(nguoiDung);
         }
 
@@ -69,8 +70,42 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
                 db.SubmitChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "VaiTro1", nguoiDung.MaVaiTro);
+            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
             return View(nguoiDung);
+        }
+
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(id));
+            if (nguoiDung == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nguoiDung);
+        }
+
+        // POST: Admin/NguoiDungs/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(id));
+            db.NguoiDungs.DeleteOnSubmit(nguoiDung);
+            db.SubmitChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

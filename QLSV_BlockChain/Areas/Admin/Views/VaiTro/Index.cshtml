@@ -1,0 +1,43 @@
+﻿@model IEnumerable<QLSV_BlockChain.Models.VaiTro>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+
+<h2>Quản lý vai trò</h2>
+
+<p>
+    <button class="btn-info"> @Html.ActionLink("Thêm mới", "Create", new { }, new { @style = "color:white;" }) </button>
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenVaiTro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Thongtinkhoa)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenVaiTro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Thongtinkhoa)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaVaiTro }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaVaiTro })
+            </td>
+        </tr>
+    }
+
+</table>
+
