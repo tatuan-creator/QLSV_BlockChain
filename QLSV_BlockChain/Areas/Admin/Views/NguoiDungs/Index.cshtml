@@ -15,26 +15,25 @@
 <table class="table table-bordered table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TaiKhoan)
+            @Html.Label("Tài khoản")
         </th>
 
         <th>
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Mota)
-        <th>
-            @Html.DisplayNameFor(model => model.VaiTro.TenVaiTro)
+            @Html.Label("Mật khẩu")
         </th>
 
+        <th>
+            @Html.Label("Mô tả")
         </th>
-        @*<th>
-                @Html.DisplayNameFor(model => model.SoE)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoN)
-            </th>*@
-        <th></th>
+
+        <th>
+            @Html.Label("Vai trò")
+        </th>
+
+        <th>
+            @Html.Label("Tác vụ")
+
+        </th>
     </tr>
 
     @foreach (var item in Model)
@@ -52,14 +51,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.VaiTro.TenVaiTro)
             </td>
-
-
-            @*<td>
-                    @Html.DisplayFor(modelItem => item.SoE)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SoN)
-                </td>*@
             <td>
                 <button class="btn btn-success">
                     @Html.ActionLink("Sửa", "Edit", new { id = item.MaNguoiDung }, new { @style = "color:white;" })

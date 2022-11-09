@@ -1175,6 +1175,7 @@
     <Content Include="Areas\KiemDinh\Views\Shared\_layoutKiemDinh.cshtml" />
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
     <Content Include="Areas\KiemDinh\Views\ChuKyRSA\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>

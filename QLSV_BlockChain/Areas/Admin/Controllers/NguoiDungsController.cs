@@ -38,5 +38,39 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
             return View(nguoiDung);
         }
+
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
+            }
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(id));
+            if (nguoiDung == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "Tenvaitro", nguoiDung.MaVaiTro);
+            return View(nguoiDung);
+        }
+
+        // POST: Admin/NguoiDungs/Edit/5
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "MaNguoiDung,TaiKhoan,MatKhau,MoTa,MaVaiTro,SoE,SoN")] NguoiDung nguoiDung)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(nguoiDung.MaNguoiDung));
+                user.TaiKhoan = nguoiDung.TaiKhoan;
+                user.MatKhau = nguoiDung.MatKhau;
+                user.Mota = nguoiDung.Mota;
+                user.MaVaiTro = nguoiDung.MaVaiTro;
+                db.SubmitChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "VaiTro1", nguoiDung.MaVaiTro);
+            return View(nguoiDung);
+        }
     }
 }

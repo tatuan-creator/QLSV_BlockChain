@@ -13,7 +13,15 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
         // GET: Admin/HomeAdmin
         public ActionResult Index()
         {
-            return View();
+            if (Session["userAdmin"] == null)
+            {
+                return RedirectToAction("Dangnhap");
+            }
+            else
+            {
+                var nguoiDung = Session["userAdmin"];
+                return View();
+            }
         }
         [HttpGet]
         public ActionResult Dangnhap()
