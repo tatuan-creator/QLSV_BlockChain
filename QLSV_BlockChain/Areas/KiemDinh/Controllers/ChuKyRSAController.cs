@@ -5,38 +5,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Security.Cryptography;
+using System.Numerics;
 
 namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
 {
     public class ChuKyRSAController : Controller
     {
-        private static RSACryptoServiceProvider rsa = new RSACryptoServiceProvider(2048);
-        private string _privateKey = rsa.ToXmlString(true);
-        private string _publicKey = rsa.ToXmlString(false);
         private BlockChain_QLSVDataContext db = new BlockChain_QLSVDataContext();
         // GET: KiemDinh/ChuKyRSA
         public ActionResult Index()
         {
             return View();
         }
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Index(FormCollection Thongtin)
         {
-
             // Lấy ra Mã cơ quan kiểm định từ View
             string MaND = Thongtin["MaNguoiDung"].ToString();
             // Gọi đến hàm khởi tạo và sinh khóa RSA tự động
-            //KhoiTao();
-            //TaoMoiKhoa();
+            KhoiTao();
+            TaoMoiKhoa();
             // Tìm ra cơ quan kiểm định đang tạo khóa trong CSDL
-            NguoiDung nguoidung = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(int.Parse(MaND)));
+            NguoiDung nguoidung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(int.Parse(MaND)));
             // Lưu lại khóa công khai của CQ Kiểm định vào CSDL
-            //nguoidung.SoE = "" + e;
-            //nguoidung.SoN = "" + N;
-            //db.SubmitChanges();
-            /*if (d != 0)
+            nguoidung.SoE = "" + e;
+            nguoidung.SoN = "" + N;
+            db.SubmitChanges();
+            if (d != 0)
             {
                 // Hiển thị khóa bí mật của CQ Kiểm định
                 ViewBag.thongbao = "Khóa bí mật của bạn là :";
@@ -46,38 +42,36 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             else
             {
                 ViewBag.loi = " Tạo khóa lỗi";
-            }*/
-            ViewBag.thongbao = "Khoá bí mật là: ";
-            ViewBag.d = _privateKey;
+            }
             return View();
         }
-        /*class Randomint : Random
+        class RandomBigInteger : Random
         {
-            public Randomint() : base()
+            public RandomBigInteger() : base()
             {
             }
 
-            public Randomint(int Seed) : base(Seed)
+            public RandomBigInteger(int Seed) : base(Seed)
             {
             }
 
-            public int Nextint(int bitLength)
+            public BigInteger NextBigInteger(int bitLength)
             {
-                if (bitLength < 1) return 0;
+                if (bitLength < 1) return BigInteger.Zero;
                 int bytes = bitLength / 8;
                 int bits = bitLength % 8;
                 byte[] bs = new byte[bytes + 1];
                 NextBytes(bs);
                 byte mask = (byte)(0xFF >> (8 - bits));
                 bs[bs.Length - 1] &= mask;
-                return new int(bs);
+                return new BigInteger(bs);
             }
         }
-        int PK = 0, SK = 0, Modulo = 0;
+        BigInteger PK = 0, SK = 0, Modulo = 0;
 
-        int p = 0, q = 0, N = 0, n = 0, e = 0, d = 0, mid_e = 0;
+        BigInteger p = 0, q = 0, N = 0, n = 0, e = 0, d = 0, mid_e = 0;
         int length = 256;
-        Randomint random_big = new Randomint();
+        RandomBigInteger random_big = new RandomBigInteger();
         Random random = new Random();
         // GET: Admin/TaoMoiRSA
         void KhoiTao()
@@ -97,7 +91,7 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
         {
             while (true)
             {
-                e = random_big.Nextint(random.Next(2, get_bit(N) - 1));
+                e = random_big.NextBigInteger(random.Next(2, get_bit(N) - 1));
                 e += 2;
                 if (ucln(e, n) == 1 && e < N) break;
             };
@@ -105,10 +99,10 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             mid_e = inverse_number(d, n);
         }
 
-        bool is_prime(int p)
+        bool is_prime(BigInteger p)
         {
             if (p == 3 || p == 5 || p == 7 || p == 11 || p == 13 || p == 17) return true;
-            int a, k = 0, q = 0;
+            BigInteger a, k = 0, q = 0;
 
             bool kt = false;
             transform(p, ref k, ref q);
@@ -121,17 +115,17 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             return true;
         }
 
-        int random_odd(int length)
+        BigInteger random_odd(int length)
         {
-            int a = 10;
+            BigInteger a = 10;
 
             do
-                a = random_big.Nextint(length);
+                a = random_big.NextBigInteger(length);
             while (a % 2 == 0);
             return a;
         }
 
-        int get_bit(int n)
+        int get_bit(BigInteger n)
         {
             int dem = 0;
 
@@ -142,11 +136,11 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             }
             return dem;
         }
-        public string tranform_binary(int n)
+        public string tranform_binary(BigInteger n)
         {
             int i;
             string st = "";
-            int[] a = new int[3000];
+            BigInteger[] a = new BigInteger[3000];
 
             for (i = 0; n > 0; i++)
             {
@@ -161,12 +155,12 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
 
         public string tranform_decimal(string st)
         {
-            int n = int.Parse(st);
-            int kq = 0;
-            int luy_thua = 1;
+            BigInteger n = BigInteger.Parse(st);
+            BigInteger kq = 0;
+            BigInteger luy_thua = 1;
             while (n != 0)
             {
-                int r = n % 10;
+                BigInteger r = n % 10;
                 n = n / 10;
                 if (r == 1)
                     kq += luy_thua;
@@ -175,7 +169,7 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             return "" + kq;
         }
 
-        void transform(int p, ref int k, ref int q)
+        void transform(BigInteger p, ref BigInteger k, ref BigInteger q)
         {
             p--;
             while (p % 2 == 0)
@@ -186,10 +180,10 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             q = p;
         }
 
-        bool miller_rabin(int p, int k, int q, int a)
+        bool miller_rabin(BigInteger p, BigInteger k, BigInteger q, BigInteger a)
         {
 
-            int x = fast_exp(a, q, p);
+            BigInteger x = fast_exp(a, q, p);
 
             if (x == 1) return true;
             for (int i = 0; i < k; i++)
@@ -200,11 +194,11 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             return false;
         }
 
-        int fast_exp(int m, int e, int p)
+        BigInteger fast_exp(BigInteger m, BigInteger e, BigInteger p)
         {
-            int kq = 1;
+            BigInteger kq = 1;
             int i, n = 0;
-            int[] b = new int[809060];
+            BigInteger[] b = new BigInteger[809060];
 
             for (i = 1; e > 0; i++)
             {
@@ -222,9 +216,9 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             return kq;
         }
 
-        int inverse_number(int a, int m)
+        BigInteger inverse_number(BigInteger a, BigInteger m)
         {
-            int y = 0, y0 = 0, y1 = 1, r = 1, q = 1, m1 = m;
+            BigInteger y = 0, y0 = 0, y1 = 1, r = 1, q = 1, m1 = m;
 
             while (a > 0)
             {
@@ -245,9 +239,9 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
                 return y;
             }
         }
-        int ucln(int a, int b)
+        BigInteger ucln(BigInteger a, BigInteger b)
         {
-            int temp;
+            BigInteger temp;
 
             while (b != 0)
             {
@@ -256,9 +250,6 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
                 b = temp;
             }
             return a;
-        }*/
-
-
-
+        }
     }
 }
