@@ -18,7 +18,7 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
             return View();
         }
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken] 
         public ActionResult Index(FormCollection Thongtin)
         {
             // Lấy ra Mã cơ quan kiểm định từ View
