@@ -48,6 +48,7 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Numerics" />
@@ -126,9 +127,12 @@
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\VaiTroController.cs" />
+    <Compile Include="Areas\DangTai\Controllers\SinhVienController.cs" />
+    <Compile Include="Areas\DangTai\DangTaiAreaRegistration.cs" />
     <Compile Include="Areas\KiemDinh\Controllers\ChuKyRSAController.cs" />
     <Compile Include="Areas\KiemDinh\Controllers\KiemDinhDiemController.cs" />
     <Compile Include="Areas\KiemDinh\KiemDinhAreaRegistration.cs" />
+    <Compile Include="Common\MaHoaRSA.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1180,6 +1184,12 @@
     <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\NguoiDungs\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\VaiTro\Index.cshtml" />
+    <Content Include="Areas\DangTai\Views\web.config" />
+    <Content Include="Areas\DangTai\Views\Shared\_layoutDangTai.cshtml" />
+    <Content Include="Areas\DangTai\Views\SinhVien\Index.cshtml" />
+    <Content Include="Areas\DangTai\Views\SinhVien\Create.cshtml" />
+    <Content Include="Areas\DangTai\Views\SinhVien\Edit.cshtml" />
+    <Content Include="Areas\DangTai\Views\SinhVien\Delete.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>
@@ -1212,8 +1222,9 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Data\" />
+    <Folder Include="Areas\DangTai\Data\" />
     <Folder Include="Areas\KiemDinh\Data\" />
-    <Folder Include="Common\" />
+    <Folder Include="Views\DangTai\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

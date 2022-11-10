@@ -15,10 +15,10 @@
 <table class="table table-bordered table-hover">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TenVaiTro)
+            @Html.Label("Tên vai trò")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Thongtinkhoa)
+            @Html.Label("Mô tả vai trò")
         </th>
         <th></th>
     </tr>
@@ -31,10 +31,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Thongtinkhoa)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaVaiTro }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaVaiTro })
             </td>
         </tr>
     }

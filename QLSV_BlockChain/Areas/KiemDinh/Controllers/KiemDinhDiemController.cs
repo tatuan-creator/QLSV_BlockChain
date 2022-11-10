@@ -11,7 +11,17 @@ namespace QLSV_BlockChain.Areas.KiemDinh.Controllers
         // GET: KiemDinh/KiemDinhDiem
         public ActionResult Index()
         {
+            if (Session["userAdmin"] == null)
+            {
+                return Redirect("~/Admin/HomeAdmin/DangNhap");
+            }
             return View();
+        }
+
+        public ActionResult Dangxuat()
+        {
+            Session["userAdmin"] = null;
+            return Redirect("~/Admin/HomeAdmin/DangNhap");
         }
     }
 }

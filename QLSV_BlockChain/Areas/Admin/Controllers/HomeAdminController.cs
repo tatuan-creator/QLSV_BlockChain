@@ -55,10 +55,16 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             else if (islogin.MaVaiTro == 3)
             {
                 Session["userAdmin"] = islogin;
-                return RedirectToAction("Index", "QuyTrinhs");
+                return Redirect("~/DangTai/SinhVien/Index");
             }
             else
                 return View();
+        }
+
+        public ActionResult Dangxuat()
+        {
+            Session["userAdmin"] = null;
+            return RedirectToAction("DangNhap", "HomeAdmin");
         }
     }
 }

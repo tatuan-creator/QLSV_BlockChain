@@ -13,6 +13,10 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
         // GET: Admin/VaiTro
         public ActionResult Index()
         {
+            if (Session["userAdmin"] == null)
+            {
+                return RedirectToAction("Dangnhap", "HomeAdmin");
+            }
             var vaiTro = db.VaiTros.ToList();
             return View(vaiTro);
         }

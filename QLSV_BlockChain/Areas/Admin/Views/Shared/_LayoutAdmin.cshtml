@@ -12,7 +12,6 @@
 </head>
 @{
     var userAdmin = Session["userAdmin"] as QLSV_BlockChain.Models.NguoiDung;
-    //var userNhaSX = Session["userNhaSX"] as Blockchain_MocChauMilk.Models.NguoiDung;
 
 }
 <body class="sb-nav-fixed">
@@ -64,7 +63,7 @@
                             if (userAdmin != null && userAdmin.MaVaiTro == 1)
                             {
                                 <a class="nav-link" href="@Url.Action("Index", "NguoiDungs")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Người dùng</a>
-                                <a class="nav-link" href="@Url.Action("Index", "VaiTroes")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Vai trò</a>
+                                <a class="nav-link" href="@Url.Action("Index", "VaiTro")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Vai trò</a>
                             }
                         }
 
