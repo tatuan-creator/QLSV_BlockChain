@@ -1,0 +1,31 @@
+﻿@model QLSV_BlockChain.Models.MonHoc
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/DangTai/Views/Shared/_layoutDangTai.cshtml";
+}
+
+<h2>Xóa môn học</h2>
+
+<h3>Có chắc chắn xóa môn học này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên môn học")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMonHoc)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa môn học" class="btn btn-danger" />
+        </div>
+    }
+</div>

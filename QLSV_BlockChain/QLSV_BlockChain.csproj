@@ -127,6 +127,9 @@
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
     <Compile Include="Areas\Admin\Controllers\VaiTroController.cs" />
+    <Compile Include="Areas\DangTai\Controllers\BangDiemController.cs" />
+    <Compile Include="Areas\DangTai\Controllers\HocKyController.cs" />
+    <Compile Include="Areas\DangTai\Controllers\MonHocController.cs" />
     <Compile Include="Areas\DangTai\Controllers\SinhVienController.cs" />
     <Compile Include="Areas\DangTai\DangTaiAreaRegistration.cs" />
     <Compile Include="Areas\KiemDinh\Controllers\ChuKyRSAController.cs" />
@@ -1190,6 +1193,17 @@
     <Content Include="Areas\DangTai\Views\SinhVien\Create.cshtml" />
     <Content Include="Areas\DangTai\Views\SinhVien\Edit.cshtml" />
     <Content Include="Areas\DangTai\Views\SinhVien\Delete.cshtml" />
+    <Content Include="Areas\DangTai\Views\MonHoc\Index.cshtml" />
+    <Content Include="Areas\DangTai\Views\MonHoc\Create.cshtml" />
+    <Content Include="Areas\DangTai\Views\MonHoc\Edit.cshtml" />
+    <Content Include="Areas\DangTai\Views\MonHoc\Delete.cshtml" />
+    <Content Include="Areas\DangTai\Views\HocKy\Index.cshtml" />
+    <Content Include="Areas\DangTai\Views\HocKy\Create.cshtml" />
+    <Content Include="Areas\DangTai\Views\HocKy\Edit.cshtml" />
+    <Content Include="Areas\DangTai\Views\HocKy\Delete.cshtml" />
+    <Content Include="Areas\DangTai\Views\BangDiem\Index.cshtml" />
+    <Content Include="Areas\DangTai\Views\BangDiem\Create.cshtml" />
+    <Content Include="Areas\DangTai\Views\BangDiem\Details.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>
@@ -1224,6 +1238,7 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\DangTai\Data\" />
     <Folder Include="Areas\KiemDinh\Data\" />
+    <Folder Include="Content\chungthuc\" />
     <Folder Include="Views\DangTai\" />
   </ItemGroup>
   <ItemGroup>

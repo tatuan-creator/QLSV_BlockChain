@@ -1,0 +1,92 @@
+﻿@model QLSV_BlockChain.Models.BangDiem
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/DangTai/Views/Shared/_layoutDangTai.cshtml";
+}
+
+<h2>Chi tiết bảng điểm</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên sinh viên")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinhVien.TenSinhVien)
+        </dd>
+
+        <dt>
+            @Html.Label("Cơ quan xác thực")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguoiDung.Mota)
+        </dd>
+
+        <dt>
+            @Html.Label("Học kỳ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HocKy.TenHocKy)
+        </dd>
+
+        <dt>
+            @Html.Label("Môn học")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonHoc.TenMonHoc)
+        </dd>
+        @if (Model.TrangThai != 0)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.NgayKy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NgayKy)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ChuKy)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ChuKy)
+            </dd>
+        }
+
+        <dt>
+            @Html.Label("Bảng điểm")
+        </dt>
+
+        <dd>
+            <img src="@Model.TepTinChungThuc" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrangThaiXacThuc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrangThaiXacThuc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBangDiem }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
