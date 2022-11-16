@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSV_BlockChain" Class="BlockChain_QLSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DDOO\SQLEXPRESS;Initial Catalog=QLSV_BlockChain;User ID=sa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLSV_BlockChainConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LETRUONGQUOCTHI;Initial Catalog=QLSV_BlockChain;User ID=sa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLSV_BlockChainConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.BangDiem" Member="BangDiems">
     <Type Name="BangDiem">
       <Column Name="MaBangDiem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -26,18 +26,18 @@
       <Association Name="HocKy_BangDiem" Member="BangDiems" ThisKey="MaHocKy" OtherKey="MaHocKy" Type="BangDiem" />
     </Type>
   </Table>
-  <Table Name="dbo.KhoaVien" Member="KhoaViens">
-    <Type Name="KhoaVien">
-      <Column Name="IDKhoa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenKhoa" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Association Name="KhoaVien_SinhVien" Member="SinhViens" ThisKey="IDKhoa" OtherKey="KhoaVien" Type="SinhVien" />
-    </Type>
-  </Table>
   <Table Name="dbo.MonHoc" Member="MonHocs">
     <Type Name="MonHoc">
       <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenMonHoc" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="MonHoc_BangDiem" Member="BangDiems" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="BangDiem" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KhoaVien" Member="KhoaViens">
+    <Type Name="KhoaVien">
+      <Column Name="IDKhoa" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenKhoa" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="KhoaVien_SinhVien" Member="SinhViens" ThisKey="IDKhoa" OtherKey="KhoaVien" Type="SinhVien" />
     </Type>
   </Table>
   <Table Name="dbo.NguoiDung" Member="NguoiDungs">

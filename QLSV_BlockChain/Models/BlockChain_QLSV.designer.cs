@@ -36,12 +36,12 @@ namespace QLSV_BlockChain.Models
     partial void InsertHocKy(HocKy instance);
     partial void UpdateHocKy(HocKy instance);
     partial void DeleteHocKy(HocKy instance);
-    partial void InsertKhoaVien(KhoaVien instance);
-    partial void UpdateKhoaVien(KhoaVien instance);
-    partial void DeleteKhoaVien(KhoaVien instance);
     partial void InsertMonHoc(MonHoc instance);
     partial void UpdateMonHoc(MonHoc instance);
     partial void DeleteMonHoc(MonHoc instance);
+    partial void InsertKhoaVien(KhoaVien instance);
+    partial void UpdateKhoaVien(KhoaVien instance);
+    partial void DeleteKhoaVien(KhoaVien instance);
     partial void InsertNguoiDung(NguoiDung instance);
     partial void UpdateNguoiDung(NguoiDung instance);
     partial void DeleteNguoiDung(NguoiDung instance);
@@ -57,7 +57,7 @@ namespace QLSV_BlockChain.Models
     #endregion
 		
 		public BlockChain_QLSVDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLSV_BlockChainConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["QLSV_BlockChainConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -102,19 +102,19 @@ namespace QLSV_BlockChain.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<KhoaVien> KhoaViens
-		{
-			get
-			{
-				return this.GetTable<KhoaVien>();
-			}
-		}
-		
 		public System.Data.Linq.Table<MonHoc> MonHocs
 		{
 			get
 			{
 				return this.GetTable<MonHoc>();
+			}
+		}
+		
+		public System.Data.Linq.Table<KhoaVien> KhoaViens
+		{
+			get
+			{
+				return this.GetTable<KhoaVien>();
 			}
 		}
 		
@@ -731,120 +731,6 @@ namespace QLSV_BlockChain.Models
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhoaVien")]
-	public partial class KhoaVien : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _IDKhoa;
-		
-		private string _TenKhoa;
-		
-		private EntitySet<SinhVien> _SinhViens;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnIDKhoaChanging(int value);
-    partial void OnIDKhoaChanged();
-    partial void OnTenKhoaChanging(string value);
-    partial void OnTenKhoaChanged();
-    #endregion
-		
-		public KhoaVien()
-		{
-			this._SinhViens = new EntitySet<SinhVien>(new Action<SinhVien>(this.attach_SinhViens), new Action<SinhVien>(this.detach_SinhViens));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDKhoa", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int IDKhoa
-		{
-			get
-			{
-				return this._IDKhoa;
-			}
-			set
-			{
-				if ((this._IDKhoa != value))
-				{
-					this.OnIDKhoaChanging(value);
-					this.SendPropertyChanging();
-					this._IDKhoa = value;
-					this.SendPropertyChanged("IDKhoa");
-					this.OnIDKhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhoa", DbType="NVarChar(100)")]
-		public string TenKhoa
-		{
-			get
-			{
-				return this._TenKhoa;
-			}
-			set
-			{
-				if ((this._TenKhoa != value))
-				{
-					this.OnTenKhoaChanging(value);
-					this.SendPropertyChanging();
-					this._TenKhoa = value;
-					this.SendPropertyChanged("TenKhoa");
-					this.OnTenKhoaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhoaVien_SinhVien", Storage="_SinhViens", ThisKey="IDKhoa", OtherKey="KhoaVien")]
-		public EntitySet<SinhVien> SinhViens
-		{
-			get
-			{
-				return this._SinhViens;
-			}
-			set
-			{
-				this._SinhViens.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_SinhViens(SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.KhoaVien1 = this;
-		}
-		
-		private void detach_SinhViens(SinhVien entity)
-		{
-			this.SendPropertyChanging();
-			entity.KhoaVien1 = null;
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.MonHoc")]
 	public partial class MonHoc : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -956,6 +842,120 @@ namespace QLSV_BlockChain.Models
 		{
 			this.SendPropertyChanging();
 			entity.MonHoc = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.KhoaVien")]
+	public partial class KhoaVien : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _IDKhoa;
+		
+		private string _TenKhoa;
+		
+		private EntitySet<SinhVien> _SinhViens;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIDKhoaChanging(int value);
+    partial void OnIDKhoaChanged();
+    partial void OnTenKhoaChanging(string value);
+    partial void OnTenKhoaChanged();
+    #endregion
+		
+		public KhoaVien()
+		{
+			this._SinhViens = new EntitySet<SinhVien>(new Action<SinhVien>(this.attach_SinhViens), new Action<SinhVien>(this.detach_SinhViens));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IDKhoa", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int IDKhoa
+		{
+			get
+			{
+				return this._IDKhoa;
+			}
+			set
+			{
+				if ((this._IDKhoa != value))
+				{
+					this.OnIDKhoaChanging(value);
+					this.SendPropertyChanging();
+					this._IDKhoa = value;
+					this.SendPropertyChanged("IDKhoa");
+					this.OnIDKhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenKhoa", DbType="NVarChar(100)")]
+		public string TenKhoa
+		{
+			get
+			{
+				return this._TenKhoa;
+			}
+			set
+			{
+				if ((this._TenKhoa != value))
+				{
+					this.OnTenKhoaChanging(value);
+					this.SendPropertyChanging();
+					this._TenKhoa = value;
+					this.SendPropertyChanged("TenKhoa");
+					this.OnTenKhoaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KhoaVien_SinhVien", Storage="_SinhViens", ThisKey="IDKhoa", OtherKey="KhoaVien")]
+		public EntitySet<SinhVien> SinhViens
+		{
+			get
+			{
+				return this._SinhViens;
+			}
+			set
+			{
+				this._SinhViens.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SinhViens(SinhVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhoaVien1 = this;
+		}
+		
+		private void detach_SinhViens(SinhVien entity)
+		{
+			this.SendPropertyChanging();
+			entity.KhoaVien1 = null;
 		}
 	}
 	

@@ -2,101 +2,101 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.75" name="BlockChain_QLSV">
   <DataContextMoniker Name="/BlockChain_QLSVDataContext" />
   <nestedChildShapes>
-    <classShape Id="1432bdf4-1d23-4d3a-8e60-8b538097752b" absoluteBounds="6.25, 1, 2, 2.7324039713541666">
+    <classShape Id="97a61072-5ed7-4996-bcee-124bbc915837" absoluteBounds="6.25, 1, 2, 2.7324039713541666">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/BangDiem" />
       <nestedChildShapes>
-        <elementListCompartment Id="ca5a5149-97d2-4365-b17c-0e00f0997707" absoluteBounds="6.265, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="ab180dce-6668-4336-bbd9-547e6f165ddc" absoluteBounds="6.265, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7efff34d-bba4-41fc-bf25-848205970775" absoluteBounds="3.5, 6.25, 2, 1.3862939453125005">
+    <classShape Id="ae6ebe25-d800-402e-9c0e-6ad5dacae731" absoluteBounds="3.5, 6.25, 2, 1.3862939453125005">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/HocKy" />
       <nestedChildShapes>
-        <elementListCompartment Id="96cd66e1-8879-4bfa-b7af-d5920e0f04cb" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="05e887e8-c53e-492c-8601-e4bb1e42035e" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="cec1bb1e-119c-4ada-b707-f20b604a6b4b" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/BlockChain_QLSVDataContext/KhoaVien" />
-      <nestedChildShapes>
-        <elementListCompartment Id="8f40cb55-e1b4-44bb-8486-873ff55c2c6f" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="93bf2d7d-84c6-4663-828f-ecfa59f72f09" absoluteBounds="3.5, 4.25, 2, 1.1939925130208326">
+    <classShape Id="ce865435-6474-4fe0-9d6f-9b639c9cea0e" absoluteBounds="3.5, 4.25, 2, 1.1939925130208326">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/MonHoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="8c312601-6ce2-462d-8da2-162d1b34efe2" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="60ecc4d6-be2c-4613-806b-e75241caf1d2" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="52bc1ed4-9cff-4d2a-b974-0709b88c7b0e" absoluteBounds="3.5, 8.375, 2, 2.1554996744791666">
+    <classShape Id="bb80385f-94a6-416b-ac47-92557349ec11" absoluteBounds="0.75, 1.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/BlockChain_QLSVDataContext/KhoaVien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="54c0de88-82b0-469c-ac54-a612da2a39f7" absoluteBounds="0.765, 2.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f2d86ffe-835e-43f7-b045-a34215b60c6b" absoluteBounds="3.5, 8.375, 2, 2.1554996744791666">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/NguoiDung" />
       <nestedChildShapes>
-        <elementListCompartment Id="8d195104-b5b4-4f87-bdab-ec9a47794e62" absoluteBounds="3.515, 8.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="85b3ae52-6cdf-40ce-8859-03307d1b1c78" absoluteBounds="3.515, 8.835, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="3782a741-1d88-4498-84db-89efac97649f" absoluteBounds="3.5, 1.375, 2, 1.9631982421874998">
+    <classShape Id="301a10f8-900b-4787-8a88-4a98cd2f9fd6" absoluteBounds="3.5, 1.375, 2, 1.9631982421874998">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/SinhVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="9c27b344-0e92-4ad0-b05d-a3ee43f8a451" absoluteBounds="3.515, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b58574ef-ba74-4c84-b0f0-01d76ca35b71" absoluteBounds="3.515, 1.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="7b9ca9e5-e82c-4b0d-ba25-58e74c05b410" absoluteBounds="0.75, 5.625, 2, 1.3862939453125005">
+    <classShape Id="38ce3c87-d172-456a-a402-feb676e8901d" absoluteBounds="0.75, 5.625, 2, 1.3862939453125005">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/StatusSinhVien" />
       <nestedChildShapes>
-        <elementListCompartment Id="04ffeeee-dede-4be2-a736-3c51fd2cd346" absoluteBounds="0.765, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="894bad01-c7af-4fdc-acfe-4a853919575c" absoluteBounds="0.765, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="62ca44c3-99f5-4d0e-a793-be54c5ee9dcd" absoluteBounds="0.75, 8.75, 2, 1.3862939453124987">
+    <classShape Id="8f45aeae-f0b5-4251-a21b-f8ea1fc74f3e" absoluteBounds="0.75, 8.75, 2, 1.3862939453124987">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/VaiTro" />
       <nestedChildShapes>
-        <elementListCompartment Id="c2489b26-adfc-49a9-a2e5-700def262698" absoluteBounds="0.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2d88c906-2cba-491f-9f73-376c753a5726" absoluteBounds="0.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
     <associationConnector edgePoints="[(5.5 : 6.94314697265625); (7.25 : 6.94314697265625); (7.25 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/HocKy/HocKy_BangDiem" />
       <nodes>
-        <classShapeMoniker Id="7efff34d-bba4-41fc-bf25-848205970775" />
-        <classShapeMoniker Id="1432bdf4-1d23-4d3a-8e60-8b538097752b" />
+        <classShapeMoniker Id="ae6ebe25-d800-402e-9c0e-6ad5dacae731" />
+        <classShapeMoniker Id="97a61072-5ed7-4996-bcee-124bbc915837" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 4.84699625651042); (6.7187475 : 4.84699625651042); (6.7187475 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/MonHoc/MonHoc_BangDiem" />
       <nodes>
-        <classShapeMoniker Id="93bf2d7d-84c6-4663-828f-ecfa59f72f09" />
-        <classShapeMoniker Id="1432bdf4-1d23-4d3a-8e60-8b538097752b" />
+        <classShapeMoniker Id="ce865435-6474-4fe0-9d6f-9b639c9cea0e" />
+        <classShapeMoniker Id="97a61072-5ed7-4996-bcee-124bbc915837" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 9.45274983723958); (7.7812525 : 9.45274983723958); (7.7812525 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/NguoiDung/NguoiDung_BangDiem" />
       <nodes>
-        <classShapeMoniker Id="52bc1ed4-9cff-4d2a-b974-0709b88c7b0e" />
-        <classShapeMoniker Id="1432bdf4-1d23-4d3a-8e60-8b538097752b" />
+        <classShapeMoniker Id="f2d86ffe-835e-43f7-b045-a34215b60c6b" />
+        <classShapeMoniker Id="97a61072-5ed7-4996-bcee-124bbc915837" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.5 : 2.35659912109375); (6.25 : 2.35659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/SinhVien/SinhVien_BangDiem" />
       <nodes>
-        <classShapeMoniker Id="3782a741-1d88-4498-84db-89efac97649f" />
-        <classShapeMoniker Id="1432bdf4-1d23-4d3a-8e60-8b538097752b" />
+        <classShapeMoniker Id="301a10f8-900b-4787-8a88-4a98cd2f9fd6" />
+        <classShapeMoniker Id="97a61072-5ed7-4996-bcee-124bbc915837" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.34699625651042); (3.5 : 2.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/KhoaVien/KhoaVien_SinhVien" />
       <nodes>
-        <classShapeMoniker Id="cec1bb1e-119c-4ada-b707-f20b604a6b4b" />
-        <classShapeMoniker Id="3782a741-1d88-4498-84db-89efac97649f" />
+        <classShapeMoniker Id="bb80385f-94a6-416b-ac47-92557349ec11" />
+        <classShapeMoniker Id="301a10f8-900b-4787-8a88-4a98cd2f9fd6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.625); (3.125 : 5.25); (3.125 : 2.87384924934896); (3.5 : 2.87384924934896)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/StatusSinhVien/StatusSinhVien_SinhVien" />
       <nodes>
-        <classShapeMoniker Id="7b9ca9e5-e82c-4b0d-ba25-58e74c05b410" />
-        <classShapeMoniker Id="3782a741-1d88-4498-84db-89efac97649f" />
+        <classShapeMoniker Id="38ce3c87-d172-456a-a402-feb676e8901d" />
+        <classShapeMoniker Id="301a10f8-900b-4787-8a88-4a98cd2f9fd6" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 9.44314697265625); (3.5 : 9.44314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/VaiTro/VaiTro_NguoiDung" />
       <nodes>
-        <classShapeMoniker Id="62ca44c3-99f5-4d0e-a793-be54c5ee9dcd" />
-        <classShapeMoniker Id="52bc1ed4-9cff-4d2a-b974-0709b88c7b0e" />
+        <classShapeMoniker Id="8f45aeae-f0b5-4251-a21b-f8ea1fc74f3e" />
+        <classShapeMoniker Id="f2d86ffe-835e-43f7-b045-a34215b60c6b" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

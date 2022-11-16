@@ -3,6 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 
@@ -18,6 +20,19 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             return View(nguoiDungs);
         }
 
+        public string mahoa(String str)
+        {
+            MD5 encrypt = MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(str);
+            byte[] hash = encrypt.ComputeHash(inputBytes);
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < hash.Length; i++)
+            {
+                sb.Append(hash[i]);
+            }
+            return sb.ToString();
+        }
+
         public ActionResult Create()
         {
             ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro");
@@ -29,6 +44,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TaiKhoan,MatKhau,Mota,MaVaiTro,SoE,SoN")] NguoiDung nguoiDung)
         {
+            nguoiDung.MatKhau = mahoa(nguoiDung.MatKhau);
             if (ModelState.IsValid)
             {
                 db.NguoiDungs.InsertOnSubmit(nguoiDung);
@@ -47,6 +63,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(System.Net.HttpStatusCode.BadRequest);
             }
             NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(id));
+            nguoiDung.MatKhau = null;
             if (nguoiDung == null)
             {
                 return HttpNotFound();
@@ -64,7 +81,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             {
                 var user = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(nguoiDung.MaNguoiDung));
                 user.TaiKhoan = nguoiDung.TaiKhoan;
-                user.MatKhau = nguoiDung.MatKhau;
+                user.MatKhau = mahoa(nguoiDung.MatKhau);
                 user.Mota = nguoiDung.Mota;
                 user.MaVaiTro = nguoiDung.MaVaiTro;
                 db.SubmitChanges();
