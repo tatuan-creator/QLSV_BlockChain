@@ -1,0 +1,65 @@
+﻿@model QLSV_BlockChain.Models.BangDiem
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/DangTai/Views/Shared/_layoutDangTai.cshtml";
+}
+
+<h2>Xóa Bảng điểm</h2>
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên sinh viên")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SinhVien.TenSinhVien)
+        </dd>
+        <dt>
+            @Html.Label("Học kỳ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HocKy.TenHocKy)
+        </dd>
+
+        <dt>
+            @Html.Label("Môn học")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonHoc.TenMonHoc)
+        </dd>
+        <dt>
+            @Html.Label("Tệp tin chứng thực")
+        </dt>
+
+        <dd>
+            <img src="@Model.TepTinChungThuc" height="300px" />
+        </dd>
+
+        <dt>
+            @Html.Label("Trạng Thái")
+        </dt>
+
+        <dd>
+            @{
+                if (Model.TrangThai == 0)
+                {
+                    <div style="color:red">Đang chờ xác thực</div>
+                }
+                else if (Model.TrangThai == 1)
+                {
+                    <div style="color:slateblue">Đã xác thực</div>
+
+                }
+                else if (Model.TrangThai == 2)
+                {
+                    <div style="color:sandybrown">Thông tin bảng điểm bị thay đổi</div>
+                }
+            }
+        </dd>
+    </dl>
+    <button class="btn btn-outline-warning">@Html.ActionLink("Xóa", "DeleteConfirm", new { id = Model.MaBangDiem })</button>
+    <button class="btn btn-outline-success">@Html.ActionLink("Trở về", "Index")</button>
+</div>

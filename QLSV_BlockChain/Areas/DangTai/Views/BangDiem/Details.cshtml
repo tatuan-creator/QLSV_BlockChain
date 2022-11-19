@@ -41,52 +41,47 @@
         <dd>
             @Html.DisplayFor(model => model.MonHoc.TenMonHoc)
         </dd>
-        @if (Model.TrangThai != 0)
-        {
-            <dt>
-                @Html.DisplayNameFor(model => model.NgayKy)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.NgayKy)
-            </dd>
-
-            <dt>
-                @Html.DisplayNameFor(model => model.ChuKy)
-            </dt>
-
-            <dd>
-                @Html.DisplayFor(model => model.ChuKy)
-            </dd>
-        }
-
         <dt>
             @Html.Label("Bảng điểm")
         </dt>
 
         <dd>
-            <img src="@Model.TepTinChungThuc" />
+            <img src="@Model.TepTinChungThuc" height="300px" />
         </dd>
+        @if (Model.TrangThai != 0)
+        {
+            <dt>
+                @Html.Label("Ngày ký")
+            </dt>
 
+            <dd>
+                @Html.DisplayFor(model => model.NgayKy)
+            </dd>
+        }
         <dt>
-            @Html.DisplayNameFor(model => model.TrangThai)
+            @Html.Label("Trạng thái")
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TrangThai)
-        </dd>
+            @{
+                if (Model.TrangThai == 0)
+                {
+                    <div style="color:red">Đang chờ xác thực</div>
+                }
+                else if (Model.TrangThai == 1)
+                {
+                    <div style="color:slateblue">Đã xác thực</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TrangThaiXacThuc)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TrangThaiXacThuc)
+                }
+                else if (Model.TrangThai == 2)
+                {
+                    <div style="color:sandybrown">Thông tin bảng điểm bị thay đổi</div>
+                }
+            }
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.MaBangDiem }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-outline-success">@Html.ActionLink("Trở về","Index")</button>
 </p>

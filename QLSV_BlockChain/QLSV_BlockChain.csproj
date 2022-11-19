@@ -1205,6 +1205,7 @@
     <Content Include="Areas\DangTai\Views\BangDiem\Details.cshtml" />
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Confirm.cshtml" />
+    <Content Include="Areas\DangTai\Views\BangDiem\Delete.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>

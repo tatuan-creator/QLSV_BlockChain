@@ -7,7 +7,9 @@
 }
 
 <h2> Tất cả bảng điểm</h2>
-
+<p>
+    <button class="btn-info"> @Html.ActionLink("Thêm mới", "Create", new { }, new { @style = "color:white;" }) </button>
+</p>
 <br />
 <table class="table table-bordered table-hover">
     <tr>
@@ -75,9 +77,6 @@
                     </button>
                     @if (item.TrangThai == 0)
                     {
-                        <button class="btn btn-success">
-                            @Html.ActionLink("Sửa", "Edit", new { id = item.MaBangDiem }, new { @style = "color:white;" })
-                        </button>
                         <button class="btn btn-warning">
                             @Html.ActionLink("Xoá", "Delete", new { id = item.MaBangDiem }, new { @style = "color:white;" })
                         </button>

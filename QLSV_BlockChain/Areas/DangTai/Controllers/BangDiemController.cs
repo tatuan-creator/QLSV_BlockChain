@@ -11,7 +11,7 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
     public class BangDiemController : Controller
     {
         private BlockChain_QLSVDataContext db = new BlockChain_QLSVDataContext();
-        private const string SAVE_PATH = "/Content/images";
+        private const string SAVE_PATH = "/Content/Images/";
         // GET: DangTai/BangDiem
         public ActionResult Index()
         {
@@ -38,13 +38,13 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaBangDiem, MaSinhVien, MaNguoiDung, MaHocKy, MaMonHoc, NgayKy, ChuKy, TepTinChungThuc, Trang Thai, TrangThaiXacThuc")] BangDiem bangDiem, HttpPostedFileBase ImageUpload)
         {
-            bangDiem.TrangThaiXacThuc = 0;
+            bangDiem.TrangThai = 0;
             if(ImageUpload != null)
             {
                 string name = Path.GetFileNameWithoutExtension(ImageUpload.FileName);
                 string extension = Path.GetExtension(ImageUpload.FileName);
-                string filename = SAVE_PATH + name + DateTime.Now.ToString("dd0mm0yyyy0hh0mm0ss0mmm") + extension;
-                bangDiem.TepTinChungThuc = filename;
+                string filename = name + DateTime.Now.ToString("dd0mm0yyyy0hh0mm0ss0mmm") + extension;
+                bangDiem.TepTinChungThuc = SAVE_PATH + filename;
                 ImageUpload.SaveAs(Path.Combine(Server.MapPath(SAVE_PATH), filename));
             }
             if (ModelState.IsValid)
@@ -72,6 +72,20 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
                 return HttpNotFound();
             }
             return View(bangDiem);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var bangdiem = db.BangDiems.FirstOrDefault(p => p.MaBangDiem == id);
+            return View(bangdiem);
+        }
+
+        public ActionResult DeleteConfirm(int id)
+        {
+            var bangdiem = db.BangDiems.FirstOrDefault(p => p.MaBangDiem == id);
+            db.BangDiems.DeleteOnSubmit(bangdiem);
+            db.SubmitChanges();
+            return RedirectToAction("Index", "BangDiem");
         }
     }
 }
