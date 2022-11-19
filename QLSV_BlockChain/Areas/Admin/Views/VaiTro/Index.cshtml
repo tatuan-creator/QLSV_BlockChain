@@ -8,12 +8,11 @@
 <br />
 
 <h2>Quản lý vai trò</h2>
-
-<p>
-    <button class="btn-info"> @Html.ActionLink("Thêm mới", "Create", new { }, new { @style = "color:white;" }) </button>
-</p>
 <table class="table table-bordered table-hover">
     <tr>
+        <th>
+            @Html.Label("Mã vai trò")
+        </th>
         <th>
             @Html.Label("Tên vai trò")
         </th>
@@ -26,6 +25,9 @@
     @foreach (var item in Model)
     {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaVaiTro)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TenVaiTro)
             </td>

@@ -1182,7 +1182,6 @@
     </Content>
     <Content Include="Areas\KiemDinh\Views\web.config" />
     <Content Include="Areas\KiemDinh\Views\Shared\_layoutKiemDinh.cshtml" />
-    <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
     <Content Include="Areas\KiemDinh\Views\ChuKyRSA\Index.cshtml" />
     <Content Include="Areas\Admin\Views\NguoiDungs\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\NguoiDungs\Delete.cshtml" />
@@ -1204,6 +1203,8 @@
     <Content Include="Areas\DangTai\Views\BangDiem\Index.cshtml" />
     <Content Include="Areas\DangTai\Views\BangDiem\Create.cshtml" />
     <Content Include="Areas\DangTai\Views\BangDiem\Details.cshtml" />
+    <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
+    <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Confirm.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>

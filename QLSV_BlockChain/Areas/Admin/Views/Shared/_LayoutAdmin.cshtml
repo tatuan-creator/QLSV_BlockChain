@@ -52,35 +52,16 @@
                                 <div class="sb-sidenav-menu-heading" style="color:red">Xin chào: @userAdmin.TaiKhoan </div>
 
                             }
-                            <div class="sb-sidenav-menu-heading">Trang chủ</div>
                         }
-                        <a class="nav-link" href="@Url.Action("Index", "HomeAdmin")">
-                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                            Bảng thông tin
-                        </a>
                         <div class="sb-sidenav-menu-heading"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Quản lý chức năng</div>
                         @{
                             if (userAdmin != null && userAdmin.MaVaiTro == 1)
                             {
                                 <a class="nav-link" href="@Url.Action("Index", "NguoiDungs")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Người dùng</a>
                                 <a class="nav-link" href="@Url.Action("Index", "VaiTro")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Vai trò</a>
+                                <a class="nav-link" href="@Url.Action("Index", "tksinhvien")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Tài khoản sinh viên</a>
                             }
                         }
-
-                        <a class="nav-link" href="@Url.Action("Index", "QuyTrinhs")"> <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>Quy trình</a>
-                        <a class="nav-link" href="@Url.Action("Index", "SanPhams")"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Sản phẩm</a>
-                        <a class="nav-link" href="@Url.Action("Index", "LoHangs")"><div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div> Lô hàng</a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
-                            Quản lý danh mục
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="#"> Khác</a>
-                                <a class="nav-link" href="#">Giao diện</a>
-                            </nav>
-                        </div>
 
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
@@ -100,15 +81,7 @@
                                 </div>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Tiện ích</div>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                            Biểu đồ
-                        </a>
-                        <a class="nav-link" href="#">
-                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Bảng
-                        </a>
+
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
