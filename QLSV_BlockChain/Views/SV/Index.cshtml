@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QLSV_BlockChain.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutSinhVien.cshtml";
+    var userAdmin = Session["userAdmin"] as QLSV_BlockChain.Models.SinhVien;
+}
+
+<h2>Thông Tin Sinh Viên</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên sinh viên")
+        </dt>
+
+        <dd>
+            @Html.Label(userAdmin.TenSinhVien)
+        </dd>
+        <dt>
+            @Html.Label("Lớp")
+        </dt>
+
+        <dd>
+            @Html.Label(userAdmin.Lop)
+        </dd>
+        <dt>
+            @Html.Label("Khoa/Viện")
+        </dt>
+
+        <dd>
+            @Html.Label(userAdmin.KhoaVien1.TenKhoa)
+        </dd>
+
+        <dt>
+            @Html.Label("Ngày Sinh")
+        </dt>
+
+        <dd>
+            @Html.Label(userAdmin.NgaySinh)
+        </dd>
+
+        <dt>
+            @Html.Label("Trạng thái học")
+        </dt>
+
+        <dd>
+            @Html.Label(userAdmin.StatusSinhVien.TenTrangThai)
+        </dd>
+    </dl>
+</div>
+

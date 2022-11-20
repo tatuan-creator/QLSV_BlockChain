@@ -50,6 +50,11 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             var islogin = context.NguoiDungs.SingleOrDefault(x => x.TaiKhoan.Equals(tk) && x.MatKhau.Equals(mk));
             if (islogin == null)
             {
+                var isLogin1 = context.SinhViens.SingleOrDefault(p => p.taikhoan.Equals(tk) && p.matkhau.Equals(mk));
+                if(isLogin1 != null) {
+                    Session["userAdmin"] = isLogin1;
+                    return Redirect("~/SV/Index");
+                }
                 ViewBag.Fail = "Tài khoản hoặc mật khẩu không chính xác.";
                 return View("Dangnhap");
             }
@@ -65,7 +70,7 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
                 Session["userAdmin"] = islogin;
                 return Redirect("~/KiemDinh/KiemDinhDiem/Index");
             }
-            // Tài khoản đăng nhập là nhà sản xuất
+            // Tài khoản đăng nhập là cơ quan đăng tải
             else if (islogin.MaVaiTro == 3)
             {
                 Session["userAdmin"] = islogin;
