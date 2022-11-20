@@ -26,7 +26,7 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
         // GET: Admin/KiemDinhs/Create
         public ActionResult Create()
         {
-            ViewBag.SinhVien = new SelectList(db.SinhViens, "IDSinhVien", "TenSinhVien");
+            ViewBag.SinhVien = new SelectList(db.SinhViens.Where(p => p.StatusSinhVien.AllowEdit == 1), "IDSinhVien", "TenSinhVien");
             ViewBag.NguoiDung = new SelectList(db.NguoiDungs.Where(p=> p.VaiTro.TenVaiTro.Equals("Kiểm Định")), "MaNguoiDung", "MoTa");
             ViewBag.HocKy = new SelectList(db.HocKies, "MaHocKy", "TenHocKy");
             ViewBag.MonHoc = new SelectList(db.MonHocs, "MaMonHoc", "TenMonHoc");

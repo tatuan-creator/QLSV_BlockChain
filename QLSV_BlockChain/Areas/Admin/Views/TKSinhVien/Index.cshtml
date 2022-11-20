@@ -1,0 +1,59 @@
+﻿@model IEnumerable<QLSV_BlockChain.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thông tin tài khoản sinh viên</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Tên sinh viên")
+        </th>
+        <th>
+            @Html.Label("Lớp")
+        </th>
+        <th>
+            @Html.Label("Khoa/Viện")
+        </th>
+        <th>
+            @Html.Label("Ngày Sinh")
+        </th>
+        <th>
+            @Html.Label("Trạng Thái")
+        </th>
+        <th>
+            @Html.Label("Tên đăng nhập")
+        </th>
+        <th>Tác vụ</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSinhVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Lop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhoaVien1.TenKhoa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgaySinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusSinhVien.TenTrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.taikhoan)
+        </td>
+        <td>
+            <button class="btn btn-outline-success">@Html.ActionLink("Sửa thông tin đăng nhập", "Edit", new { id=item.IDSinhVien }) </button>
+        </td>
+    </tr>
+}
+
+</table>

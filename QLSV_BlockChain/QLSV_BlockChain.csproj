@@ -126,6 +126,7 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeAdminController.cs" />
     <Compile Include="Areas\Admin\Controllers\NguoiDungsController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TKSinhVienController.cs" />
     <Compile Include="Areas\Admin\Controllers\VaiTroController.cs" />
     <Compile Include="Areas\DangTai\Controllers\BangDiemController.cs" />
     <Compile Include="Areas\DangTai\Controllers\HocKyController.cs" />
@@ -1206,6 +1207,8 @@
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Index.cshtml" />
     <Content Include="Areas\KiemDinh\Views\KiemDinhDiem\Confirm.cshtml" />
     <Content Include="Areas\DangTai\Views\BangDiem\Delete.cshtml" />
+    <Content Include="Areas\Admin\Views\TKSinhVien\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\TKSinhVien\Edit.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>
@@ -1231,8 +1234,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -1241,7 +1242,6 @@
     <Folder Include="Areas\DangTai\Data\" />
     <Folder Include="Areas\KiemDinh\Data\" />
     <Folder Include="Content\chungthuc\" />
-    <Folder Include="Views\DangTai\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
