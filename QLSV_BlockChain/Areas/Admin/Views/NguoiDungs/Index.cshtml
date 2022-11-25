@@ -27,6 +27,10 @@
         </th>
 
         <th>
+            @Html.Label("Trạng thái")
+        </th>
+
+        <th>
             @Html.Label("Tác vụ")
 
         </th>
@@ -45,12 +49,35 @@
                 @Html.DisplayFor(modelItem => item.VaiTro.TenVaiTro)
             </td>
             <td>
-                <button class="btn btn-success">
+                @{ 
+                    if(item.IsActive == 0)
+                    {
+                    <div style="color:red">Vô hiệu hóa</div>
+                    }
+                    else if(item.IsActive == 1)
+                    {
+                    <div style="color:slateblue">Hoạt động</div>
+                    }
+                }
+            </td>
+            <td>
+                <button class="btn btn-warning">
                     @Html.ActionLink("Sửa", "Edit", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
                 </button>
-                <button class="btn btn-danger">
-                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
-                </button>
+                @{
+                    if (item.IsActive == 1)
+                    {
+                        <button class="btn btn-danger">
+                            @Html.ActionLink("Vô hiệu hóa", "Delete", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
+                        </button>
+                    }
+                    else if (item.IsActive == 0)
+                    {
+                        <button class="btn btn-success">
+                            @Html.ActionLink("Kích hoạt", "Active", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
+                        </button>
+                    }
+                }
             </td>
         </tr>
     }

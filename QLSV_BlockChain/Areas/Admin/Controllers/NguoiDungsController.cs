@@ -44,14 +44,21 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "TaiKhoan,MatKhau,Mota,MaVaiTro,SoE,SoN")] NguoiDung nguoiDung)
         {
+            var isUnique = db.NguoiDungs.FirstOrDefault(p => p.TaiKhoan.Equals(nguoiDung.TaiKhoan));
+            if(isUnique != null)
+            {
+                ViewBag.Error = "Tên tài khoản này đã tồn tại ! Vui lòng chọn tên tài khoản khác.";
+                ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
+                return View(nguoiDung);
+            }
             nguoiDung.MatKhau = mahoa(nguoiDung.MatKhau);
+            nguoiDung.IsActive = 0;
             if (ModelState.IsValid)
             {
                 db.NguoiDungs.InsertOnSubmit(nguoiDung);
                 db.SubmitChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
             return View(nguoiDung);
         }
@@ -111,7 +118,31 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(id));
-            db.NguoiDungs.DeleteOnSubmit(nguoiDung);
+            nguoiDung.IsActive = 0;
+            db.SubmitChanges();
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Active(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(id));
+            if (nguoiDung == null)
+            {
+                return HttpNotFound();
+            }
+            return View(nguoiDung);
+        }
+
+        [HttpPost, ActionName("Active")]
+        [ValidateAntiForgeryToken]
+        public ActionResult ActiveConfirmed(int id)
+        {
+            NguoiDung nguoiDung = db.NguoiDungs.FirstOrDefault(p => p.MaNguoiDung.Equals(id));
+            nguoiDung.IsActive = 1;
             db.SubmitChanges();
             return RedirectToAction("Index");
         }

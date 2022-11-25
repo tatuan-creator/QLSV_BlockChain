@@ -137,6 +137,7 @@
     <Compile Include="Areas\KiemDinh\Controllers\KiemDinhDiemController.cs" />
     <Compile Include="Areas\KiemDinh\KiemDinhAreaRegistration.cs" />
     <Compile Include="Common\MaHoaRSA.cs" />
+    <Compile Include="Common\Mail.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SVController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1210,6 +1211,8 @@
     <Content Include="Areas\DangTai\Views\BangDiem\Delete.cshtml" />
     <Content Include="Areas\Admin\Views\TKSinhVien\Index.cshtml" />
     <Content Include="Areas\Admin\Views\TKSinhVien\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\HomeAdmin\password.cshtml" />
+    <Content Include="Areas\Admin\Views\NguoiDungs\Active.cshtml" />
     <None Include="Models\BlockChain_QLSV.dbml.layout">
       <DependentUpon>BlockChain_QLSV.dbml</DependentUpon>
     </None>

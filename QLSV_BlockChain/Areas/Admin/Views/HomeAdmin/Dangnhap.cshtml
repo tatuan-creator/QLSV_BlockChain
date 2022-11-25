@@ -10,9 +10,9 @@
 <head>
     <link href="~/Content/layoutAdmin/css/styles.css" rel="stylesheet" />
     <meta name="viewport" content="width=device-width" />
-    <title>Dangnhap</title>
+    <title>Đăng nhập</title>
 </head>
-<body style="background-image: url(../../../../Content/images/R.jpg)">
+<body style="background-size:cover; background-image: url(../../../../Content/images/R.jpg)">
     <div class="container">
         <div class="row justify-content-center" style="margin-top:50px">
             <div class="col-lg-6" style="opacity:0.9">
@@ -42,11 +42,9 @@
                                         @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="custom-control custom-checkbox"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Lưu mật khẩu</label></div>
-                                </div>
+
                                 <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
-                                    <a class="small" href="password.html">Quên mật khẩu?</a>
+                                    <a class="small" href="password">Quên mật khẩu?</a>
                                     <input type="submit" value="Đăng nhập" class="btn btn-primary" />
                                 </div>
                             </div>

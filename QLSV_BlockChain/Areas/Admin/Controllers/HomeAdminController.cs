@@ -85,5 +85,9 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             Session["userAdmin"] = null;
             return RedirectToAction("DangNhap", "HomeAdmin");
         }
+        public ActionResult password()
+        {
+            return View();
+        }
     }
 }
