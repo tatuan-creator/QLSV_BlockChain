@@ -51,11 +51,23 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             if (islogin == null)
             {
                 var isLogin1 = context.SinhViens.SingleOrDefault(p => p.taikhoan.Equals(tk) && p.matkhau.Equals(mk));
-                if(isLogin1 != null) {
+                if (isLogin1.StatusSinhVien.AllowEdit != 1)
+                {
+                    ViewBag.Fail = "Tài khoản bị vô hiệu hóa.";
+                    return View("Dangnhap");
+                }
+                else if (isLogin1 != null) 
+                {
                     Session["userAdmin"] = isLogin1;
                     return Redirect("~/SV/Index");
                 }
                 ViewBag.Fail = "Tài khoản hoặc mật khẩu không chính xác.";
+                return View("Dangnhap");
+            }
+            //Tài khoản bị vô hiệu hóa
+            else if (islogin.IsActive == 0)
+            {
+                ViewBag.Fail = "Tài khoản bị vô hiệu hóa.";
                 return View("Dangnhap");
             }
             // Tài khoản đăng nhập là quản trị viên

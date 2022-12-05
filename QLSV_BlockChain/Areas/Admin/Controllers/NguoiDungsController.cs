@@ -88,7 +88,10 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             {
                 var user = db.NguoiDungs.FirstOrDefault(n => n.MaNguoiDung.Equals(nguoiDung.MaNguoiDung));
                 user.TaiKhoan = nguoiDung.TaiKhoan;
-                user.MatKhau = mahoa(nguoiDung.MatKhau);
+                if(nguoiDung.MatKhau != null)
+                {
+                    user.MatKhau = mahoa(nguoiDung.MatKhau);
+                }
                 user.Mota = nguoiDung.Mota;
                 user.MaVaiTro = nguoiDung.MaVaiTro;
                 db.SubmitChanges();

@@ -33,6 +33,7 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MaHocKy, TenHocKy")] HocKy hocKy)
         {
+            hocKy.IsActive = 1;
             if (ModelState.IsValid)
             {
                 db.HocKies.InsertOnSubmit(hocKy);
@@ -93,7 +94,7 @@ namespace QLSV_BlockChain.Areas.DangTai.Controllers
         public ActionResult DeleteConfirmed(string id)
         {
             HocKy hocKy = db.HocKies.FirstOrDefault(p => p.MaHocKy.Equals(id));
-            db.HocKies.DeleteOnSubmit(hocKy);
+            hocKy.IsActive = 0;
             db.SubmitChanges();
             return RedirectToAction("Index");
         }

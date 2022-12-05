@@ -47,7 +47,10 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
             {
                 var user = db.SinhViens.FirstOrDefault(n => n.IDSinhVien.Equals(sinhVien.IDSinhVien));
                 user.taikhoan = sinhVien.taikhoan;
-                user.matkhau = mahoa(sinhVien.matkhau);
+                if(sinhVien.matkhau != null)
+                {
+                    user.matkhau = mahoa(sinhVien.matkhau);
+                }
                 db.SubmitChanges();
                 return RedirectToAction("Index");
             }

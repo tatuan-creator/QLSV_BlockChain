@@ -1,0 +1,85 @@
+﻿@model IEnumerable<QLSV_BlockChain.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<br />
+
+<h2>Quản lý người dùng</h2>
+
+<p>
+    <button class="btn-info"> @Html.ActionLink("Thêm mới", "Create", new { }, new { @style = "color:white;" }) </button>
+</p>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>
+            @Html.Label("Tài khoản")
+        </th>
+
+        <th>
+            @Html.Label("Mô tả")
+        </th>
+
+        <th>
+            @Html.Label("Vai trò")
+        </th>
+
+        <th>
+            @Html.Label("Trạng thái")
+        </th>
+
+        <th>
+            @Html.Label("Tác vụ")
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TaiKhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mota)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VaiTro.TenVaiTro)
+            </td>
+            <td>
+                @{ 
+                    if(item.IsActive == 0)
+                    {
+                    <div style="color:red">Vô hiệu hóa</div>
+                    }
+                    else if(item.IsActive == 1)
+                    {
+                    <div style="color:slateblue">Hoạt động</div>
+                    }
+                }
+            </td>
+            <td>
+                <button class="btn btn-warning">
+                    @Html.ActionLink("Sửa", "Edit", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
+                </button>
+                @{
+                    if (item.IsActive == 1)
+                    {
+                        <button class="btn btn-danger">
+                            @Html.ActionLink("Vô hiệu hóa", "Delete", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
+                        </button>
+                    }
+                    else if (item.IsActive == 0)
+                    {
+                        <button class="btn btn-success">
+                            @Html.ActionLink("Kích hoạt", "Active", new { id = item.MaNguoiDung }, new { @style = "color:white;" })
+                        </button>
+                    }
+                }
+            </td>
+        </tr>
+    }
+
+</table>

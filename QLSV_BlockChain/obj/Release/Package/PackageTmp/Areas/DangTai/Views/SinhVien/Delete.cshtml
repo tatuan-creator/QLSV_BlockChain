@@ -1,0 +1,62 @@
+﻿@model QLSV_BlockChain.Models.SinhVien
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/DangTai/Views/Shared/_layoutDangTai.cshtml";
+}
+
+<h2>Xóa sinh viên</h2>
+
+<h3>Có chắc chắn xóa sinh viên này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên sinh viên")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSinhVien)
+        </dd>
+
+        <dt>
+            @Html.Label("Lớp")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lop)
+        </dd>
+
+        <dt>
+            @Html.Label("Ngày Sinh")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgaySinh)
+        </dd>
+        <dt>
+            @Html.Label("Khoa/Viện")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KhoaVien1.TenKhoa)
+        </dd>
+        <dt>
+            @Html.Label("Trạng Thái")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusSinhVien.TenTrangThai)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa người dùng" class="btn btn-danger" />
+            @*@Html.ActionLink("Back to List", "Index")*@
+        </div>
+    }
+</div>

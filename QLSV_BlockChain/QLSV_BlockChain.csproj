@@ -1132,14 +1132,12 @@
     <Content Include="Content\ckfinder\skins\v1\skin.js" />
     <Content Include="Content\ckfinder\skins\v1\uipanel.css" />
     <Content Include="Content\ckfinder\translations.txt" />
-    <Content Include="Content\images\bg.jpg" />
     <Content Include="Content\images\bg1.jpg" />
     <Content Include="Content\images\bg2.jpg" />
     <Content Include="Content\images\bg3.jpg" />
     <Content Include="Content\images\bg4.jpg" />
     <Content Include="Content\images\iconnew.gif" />
     <Content Include="Content\images\logo.png" />
-    <Content Include="Content\images\nhamaysua.jpg" />
     <Content Include="Content\images\R.jpg" />
     <Content Include="Content\layoutAdmin\css\styles.css" />
     <Content Include="Content\layoutAdmin\js\scripts.js" />

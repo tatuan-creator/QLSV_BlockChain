@@ -1,0 +1,31 @@
+﻿@model QLSV_BlockChain.Models.HocKy
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/DangTai/Views/Shared/_layoutDangTai.cshtml";
+}
+
+<h2>Xóa học kỳ</h2>
+
+<h3>Có chắc chắn xóa học kỳ này?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.Label("Tên học kỳ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHocKy)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xóa người dùng" class="btn btn-danger" />
+        </div>
+    }
+</div>

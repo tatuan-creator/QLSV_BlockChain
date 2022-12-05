@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 11.5" name="BlockChain_QLSV">
   <DataContextMoniker Name="/BlockChain_QLSVDataContext" />
   <nestedChildShapes>
-    <classShape Id="ae6ebe25-d800-402e-9c0e-6ad5dacae731" absoluteBounds="3.5, 6.25, 2, 1.3862939453125005">
-      <DataClassMoniker Name="/BlockChain_QLSVDataContext/HocKy" />
-      <nestedChildShapes>
-        <elementListCompartment Id="05e887e8-c53e-492c-8601-e4bb1e42035e" absoluteBounds="3.515, 6.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="ce865435-6474-4fe0-9d6f-9b639c9cea0e" absoluteBounds="3.5, 4.25, 2, 1.1939925130208326">
       <DataClassMoniker Name="/BlockChain_QLSVDataContext/MonHoc" />
       <nestedChildShapes>
@@ -45,7 +39,7 @@
         <classShapeMoniker Id="e8093d8f-91cd-491b-95c1-5ad55fa2198a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 5.90625); (3.34375 : 5.90625); (3.34375 : 3.34780110677083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 6.31814697265625); (3.34375 : 6.31814697265625); (3.34375 : 3.34780110677083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/StatusSinhVien/StatusSinhVien_SinhVien" />
       <nodes>
         <classShapeMoniker Id="38ce3c87-d172-456a-a402-feb676e8901d" />
@@ -58,21 +52,14 @@
         <elementListCompartment Id="b01b422e-97d4-4d8a-a1a5-9cc251e5343f" absoluteBounds="6.265, 1.71, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(5.5 : 6.94314697265625); (6.33854041666667 : 6.94314697265625 : JumpStart); (6.50520708333333 : 6.94314697265625 : JumpEnd); (7.25 : 6.94314697265625); (7.25 : 4.3670068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/BlockChain_QLSVDataContext/HocKy/HocKy_BangDiem" />
-      <nodes>
-        <classShapeMoniker Id="ae6ebe25-d800-402e-9c0e-6ad5dacae731" />
-        <classShapeMoniker Id="644b1489-45ce-4edb-a470-b6f97f143ec1" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.93675217447917); (6.33854041666667 : 4.93675217447917 : JumpStart); (6.50520708333333 : 4.93675217447917 : JumpEnd); (6.7187475 : 4.93675217447917); (6.7187475 : 4.3670068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 4.93675217447917); (5.79166416666667 : 4.93675217447917 : JumpStart); (5.95833083333333 : 4.93675217447917 : JumpEnd); (6.7187475 : 4.93675217447917); (6.7187475 : 4.3670068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/MonHoc/MonHoc_BangDiem" />
       <nodes>
         <classShapeMoniker Id="ce865435-6474-4fe0-9d6f-9b639c9cea0e" />
         <classShapeMoniker Id="644b1489-45ce-4edb-a470-b6f97f143ec1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.25 : 2.29890055338542); (6.25 : 2.29890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.25 : 2.29890055338542); (6.25 : 2.29890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/SinhVien/SinhVien_BangDiem" />
       <nodes>
         <classShapeMoniker Id="e8093d8f-91cd-491b-95c1-5ad55fa2198a" />
@@ -85,18 +72,31 @@
         <elementListCompartment Id="45b41311-89fd-45e0-b4a4-8a7df9761428" absoluteBounds="5.14, 9.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(6.42187375 : 8.875); (6.42187375 : 4.3670068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(6.98437375 : 8.875); (6.98437375 : 4.3670068359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/NguoiDung/NguoiDung_BangDiem" />
       <nodes>
         <classShapeMoniker Id="066a213f-6924-4783-9b04-c24e9ca52489" />
         <classShapeMoniker Id="644b1489-45ce-4edb-a470-b6f97f143ec1" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 9.50564697265625); (5.125 : 9.50564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.75 : 9.50564697265625); (5.125 : 9.50564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/BlockChain_QLSVDataContext/VaiTro/VaiTro_NguoiDung" />
       <nodes>
         <classShapeMoniker Id="8f45aeae-f0b5-4251-a21b-f8ea1fc74f3e" />
         <classShapeMoniker Id="066a213f-6924-4783-9b04-c24e9ca52489" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="f3d00d15-16ab-41b4-9ab1-aee94873a152" absoluteBounds="4.375, 6.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/BlockChain_QLSVDataContext/HocKy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59aafc40-f2d6-42d8-a1da-c6bec87baaf6" absoluteBounds="4.39, 6.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.8749975 : 6.5); (5.8749975 : 3.79890055338542); (6.25 : 3.79890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/BlockChain_QLSVDataContext/HocKy/HocKy_BangDiem" />
+      <nodes>
+        <classShapeMoniker Id="f3d00d15-16ab-41b4-9ab1-aee94873a152" />
+        <classShapeMoniker Id="644b1489-45ce-4edb-a470-b6f97f143ec1" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

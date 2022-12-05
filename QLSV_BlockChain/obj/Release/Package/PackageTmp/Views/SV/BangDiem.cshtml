@@ -1,0 +1,88 @@
+﻿@model IEnumerable<QLSV_BlockChain.Models.BangDiem>
+
+@{
+    ViewBag.Title = "BangDiem";
+    Layout = "~/Views/Shared/_LayoutSinhVien.cshtml";
+    var userAdmin = Session["userAdmin"] as QLSV_BlockChain.Models.SinhVien;
+}
+
+<h2>Bảng điểm của sinh viên @userAdmin.TenSinhVien</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.Label("Phòng ban xác nhận")
+        </th>
+        <th>
+            @Html.Label("Học kỳ")
+        </th>
+        <th>
+            @Html.Label("Mã môn")
+        </th>
+        <th>
+            @Html.Label("Môn học")
+        </th>
+        <th>
+            @Html.Label("Điểm")
+        </th>
+        <th>
+        </th>
+        <th>
+            @Html.Label("Ghi chú")
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        if (item.MaSinhVien == userAdmin.IDSinhVien)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NguoiDung.Mota)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HocKy.TenHocKy)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonHoc.MaMonHoc)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MonHoc.TenMonHoc)
+                </td>
+                <td>
+                    <img src="@item.TepTinChungThuc" />
+                </td>
+                <td>
+                    @{
+                        if (item.TrangThai == 0)
+                        {
+                            <div style="color:red">Đang chờ xác thực</div>
+                        }
+                        else if (item.TrangThai == 1)
+                        {
+                            <div style="color:slateblue">Đã xác thực</div>
+
+                        }
+                        else if (item.TrangThai == 2)
+                        {
+                            <div style="color:sandybrown">Thông tin bảng điểm bị thay đổi</div>
+                        }
+                    }
+                </td>
+                <td>
+                    @{
+                        if (item.TrangThai == 0)
+                        {
+                            <div style="color:red">Điểm đã sửa</div>
+                        }
+                        else if (item.TrangThai == 1)
+                        {
+                            <div style="color:slateblue">Điểm mới nhất</div>
+
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    }
+
+</table>

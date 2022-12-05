@@ -30,9 +30,6 @@ namespace QLSV_BlockChain.Models
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertHocKy(HocKy instance);
-    partial void UpdateHocKy(HocKy instance);
-    partial void DeleteHocKy(HocKy instance);
     partial void InsertMonHoc(MonHoc instance);
     partial void UpdateMonHoc(MonHoc instance);
     partial void DeleteMonHoc(MonHoc instance);
@@ -54,6 +51,9 @@ namespace QLSV_BlockChain.Models
     partial void InsertNguoiDung(NguoiDung instance);
     partial void UpdateNguoiDung(NguoiDung instance);
     partial void DeleteNguoiDung(NguoiDung instance);
+    partial void InsertHocKy(HocKy instance);
+    partial void UpdateHocKy(HocKy instance);
+    partial void DeleteHocKy(HocKy instance);
     #endregion
 		
 		public BlockChain_QLSVDataContext() : 
@@ -84,14 +84,6 @@ namespace QLSV_BlockChain.Models
 				base(connection, mappingSource)
 		{
 			OnCreated();
-		}
-		
-		public System.Data.Linq.Table<HocKy> HocKies
-		{
-			get
-			{
-				return this.GetTable<HocKy>();
-			}
 		}
 		
 		public System.Data.Linq.Table<MonHoc> MonHocs
@@ -149,143 +141,13 @@ namespace QLSV_BlockChain.Models
 				return this.GetTable<NguoiDung>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HocKy")]
-	public partial class HocKy : INotifyPropertyChanging, INotifyPropertyChanged
-	{
 		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _MaHocKy;
-		
-		private string _TenHocKy;
-		
-		private string _GhiChu;
-		
-		private EntitySet<BangDiem> _BangDiems;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnMaHocKyChanging(string value);
-    partial void OnMaHocKyChanged();
-    partial void OnTenHocKyChanging(string value);
-    partial void OnTenHocKyChanged();
-    partial void OnGhiChuChanging(string value);
-    partial void OnGhiChuChanged();
-    #endregion
-		
-		public HocKy()
-		{
-			this._BangDiems = new EntitySet<BangDiem>(new Action<BangDiem>(this.attach_BangDiems), new Action<BangDiem>(this.detach_BangDiems));
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocKy", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MaHocKy
+		public System.Data.Linq.Table<HocKy> HocKies
 		{
 			get
 			{
-				return this._MaHocKy;
+				return this.GetTable<HocKy>();
 			}
-			set
-			{
-				if ((this._MaHocKy != value))
-				{
-					this.OnMaHocKyChanging(value);
-					this.SendPropertyChanging();
-					this._MaHocKy = value;
-					this.SendPropertyChanged("MaHocKy");
-					this.OnMaHocKyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHocKy", DbType="NVarChar(100)")]
-		public string TenHocKy
-		{
-			get
-			{
-				return this._TenHocKy;
-			}
-			set
-			{
-				if ((this._TenHocKy != value))
-				{
-					this.OnTenHocKyChanging(value);
-					this.SendPropertyChanging();
-					this._TenHocKy = value;
-					this.SendPropertyChanged("TenHocKy");
-					this.OnTenHocKyChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500)")]
-		public string GhiChu
-		{
-			get
-			{
-				return this._GhiChu;
-			}
-			set
-			{
-				if ((this._GhiChu != value))
-				{
-					this.OnGhiChuChanging(value);
-					this.SendPropertyChanging();
-					this._GhiChu = value;
-					this.SendPropertyChanged("GhiChu");
-					this.OnGhiChuChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HocKy_BangDiem", Storage="_BangDiems", ThisKey="MaHocKy", OtherKey="MaHocKy")]
-		public EntitySet<BangDiem> BangDiems
-		{
-			get
-			{
-				return this._BangDiems;
-			}
-			set
-			{
-				this._BangDiems.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_BangDiems(BangDiem entity)
-		{
-			this.SendPropertyChanging();
-			entity.HocKy = this;
-		}
-		
-		private void detach_BangDiems(BangDiem entity)
-		{
-			this.SendPropertyChanging();
-			entity.HocKy = null;
 		}
 	}
 	
@@ -1163,13 +1025,13 @@ namespace QLSV_BlockChain.Models
 		
 		private string _TimeStamp;
 		
-		private EntityRef<HocKy> _HocKy;
-		
 		private EntityRef<MonHoc> _MonHoc;
 		
 		private EntityRef<SinhVien> _SinhVien;
 		
 		private EntityRef<NguoiDung> _NguoiDung;
+		
+		private EntityRef<HocKy> _HocKy;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1203,10 +1065,10 @@ namespace QLSV_BlockChain.Models
 		
 		public BangDiem()
 		{
-			this._HocKy = default(EntityRef<HocKy>);
 			this._MonHoc = default(EntityRef<MonHoc>);
 			this._SinhVien = default(EntityRef<SinhVien>);
 			this._NguoiDung = default(EntityRef<NguoiDung>);
+			this._HocKy = default(EntityRef<HocKy>);
 			OnCreated();
 		}
 		
@@ -1466,40 +1328,6 @@ namespace QLSV_BlockChain.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HocKy_BangDiem", Storage="_HocKy", ThisKey="MaHocKy", OtherKey="MaHocKy", IsForeignKey=true)]
-		public HocKy HocKy
-		{
-			get
-			{
-				return this._HocKy.Entity;
-			}
-			set
-			{
-				HocKy previousValue = this._HocKy.Entity;
-				if (((previousValue != value) 
-							|| (this._HocKy.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._HocKy.Entity = null;
-						previousValue.BangDiems.Remove(this);
-					}
-					this._HocKy.Entity = value;
-					if ((value != null))
-					{
-						value.BangDiems.Add(this);
-						this._MaHocKy = value.MaHocKy;
-					}
-					else
-					{
-						this._MaHocKy = default(string);
-					}
-					this.SendPropertyChanged("HocKy");
-				}
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="MonHoc_BangDiem", Storage="_MonHoc", ThisKey="MaMonHoc", OtherKey="MaMonHoc", IsForeignKey=true)]
 		public MonHoc MonHoc
 		{
@@ -1598,6 +1426,40 @@ namespace QLSV_BlockChain.Models
 						this._MaNguoiDung = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("NguoiDung");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HocKy_BangDiem", Storage="_HocKy", ThisKey="MaHocKy", OtherKey="MaHocKy", IsForeignKey=true)]
+		public HocKy HocKy
+		{
+			get
+			{
+				return this._HocKy.Entity;
+			}
+			set
+			{
+				HocKy previousValue = this._HocKy.Entity;
+				if (((previousValue != value) 
+							|| (this._HocKy.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._HocKy.Entity = null;
+						previousValue.BangDiems.Remove(this);
+					}
+					this._HocKy.Entity = value;
+					if ((value != null))
+					{
+						value.BangDiems.Add(this);
+						this._MaHocKy = value.MaHocKy;
+					}
+					else
+					{
+						this._MaHocKy = default(string);
+					}
+					this.SendPropertyChanged("HocKy");
 				}
 			}
 		}
@@ -1919,6 +1781,168 @@ namespace QLSV_BlockChain.Models
 		{
 			this.SendPropertyChanging();
 			entity.NguoiDung = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.HocKy")]
+	public partial class HocKy : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MaHocKy;
+		
+		private string _TenHocKy;
+		
+		private string _GhiChu;
+		
+		private System.Nullable<int> _IsActive;
+		
+		private EntitySet<BangDiem> _BangDiems;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMaHocKyChanging(string value);
+    partial void OnMaHocKyChanged();
+    partial void OnTenHocKyChanging(string value);
+    partial void OnTenHocKyChanged();
+    partial void OnGhiChuChanging(string value);
+    partial void OnGhiChuChanged();
+    partial void OnIsActiveChanging(System.Nullable<int> value);
+    partial void OnIsActiveChanged();
+    #endregion
+		
+		public HocKy()
+		{
+			this._BangDiems = new EntitySet<BangDiem>(new Action<BangDiem>(this.attach_BangDiems), new Action<BangDiem>(this.detach_BangDiems));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MaHocKy", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MaHocKy
+		{
+			get
+			{
+				return this._MaHocKy;
+			}
+			set
+			{
+				if ((this._MaHocKy != value))
+				{
+					this.OnMaHocKyChanging(value);
+					this.SendPropertyChanging();
+					this._MaHocKy = value;
+					this.SendPropertyChanged("MaHocKy");
+					this.OnMaHocKyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TenHocKy", DbType="NVarChar(100)")]
+		public string TenHocKy
+		{
+			get
+			{
+				return this._TenHocKy;
+			}
+			set
+			{
+				if ((this._TenHocKy != value))
+				{
+					this.OnTenHocKyChanging(value);
+					this.SendPropertyChanging();
+					this._TenHocKy = value;
+					this.SendPropertyChanged("TenHocKy");
+					this.OnTenHocKyChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_GhiChu", DbType="NVarChar(500)")]
+		public string GhiChu
+		{
+			get
+			{
+				return this._GhiChu;
+			}
+			set
+			{
+				if ((this._GhiChu != value))
+				{
+					this.OnGhiChuChanging(value);
+					this.SendPropertyChanging();
+					this._GhiChu = value;
+					this.SendPropertyChanged("GhiChu");
+					this.OnGhiChuChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_IsActive", DbType="Int")]
+		public System.Nullable<int> IsActive
+		{
+			get
+			{
+				return this._IsActive;
+			}
+			set
+			{
+				if ((this._IsActive != value))
+				{
+					this.OnIsActiveChanging(value);
+					this.SendPropertyChanging();
+					this._IsActive = value;
+					this.SendPropertyChanged("IsActive");
+					this.OnIsActiveChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="HocKy_BangDiem", Storage="_BangDiems", ThisKey="MaHocKy", OtherKey="MaHocKy")]
+		public EntitySet<BangDiem> BangDiems
+		{
+			get
+			{
+				return this._BangDiems;
+			}
+			set
+			{
+				this._BangDiems.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_BangDiems(BangDiem entity)
+		{
+			this.SendPropertyChanging();
+			entity.HocKy = this;
+		}
+		
+		private void detach_BangDiems(BangDiem entity)
+		{
+			this.SendPropertyChanging();
+			entity.HocKy = null;
 		}
 	}
 }

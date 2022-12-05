@@ -1,13 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLSV_BlockChain" Class="BlockChain_QLSVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=LTQTHINH;Initial Catalog=QLSV_BlockChain;User ID=sa;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLSV_BlockChainConnectionString1" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.HocKy" Member="HocKies">
-    <Type Name="HocKy">
-      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TenHocKy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
-      <Association Name="HocKy_BangDiem" Member="BangDiems" ThisKey="MaHocKy" OtherKey="MaHocKy" Type="BangDiem" />
-    </Type>
-  </Table>
   <Table Name="dbo.MonHoc" Member="MonHocs">
     <Type Name="MonHoc">
       <Column Name="MaMonHoc" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -67,10 +59,10 @@
       <Column Name="TrangThaiXacThuc" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="previousHash" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
       <Column Name="TimeStamp" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
-      <Association Name="HocKy_BangDiem" Member="HocKy" ThisKey="MaHocKy" OtherKey="MaHocKy" Type="HocKy" IsForeignKey="true" />
       <Association Name="MonHoc_BangDiem" Member="MonHoc" ThisKey="MaMonHoc" OtherKey="MaMonHoc" Type="MonHoc" IsForeignKey="true" />
       <Association Name="SinhVien_BangDiem" Member="SinhVien" ThisKey="MaSinhVien" OtherKey="IDSinhVien" Type="SinhVien" IsForeignKey="true" />
       <Association Name="NguoiDung_BangDiem" Member="NguoiDung" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="NguoiDung" IsForeignKey="true" />
+      <Association Name="HocKy_BangDiem" Member="HocKy" ThisKey="MaHocKy" OtherKey="MaHocKy" Type="HocKy" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NguoiDung" Member="NguoiDungs">
@@ -85,6 +77,15 @@
       <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="NguoiDung_BangDiem" Member="BangDiems" ThisKey="MaNguoiDung" OtherKey="MaNguoiDung" Type="BangDiem" />
       <Association Name="VaiTro_NguoiDung" Member="VaiTro" ThisKey="MaVaiTro" OtherKey="MaVaiTro" Type="VaiTro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HocKy" Member="HocKies">
+    <Type Name="HocKy">
+      <Column Name="MaHocKy" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TenHocKy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="IsActive" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="HocKy_BangDiem" Member="BangDiems" ThisKey="MaHocKy" OtherKey="MaHocKy" Type="BangDiem" />
     </Type>
   </Table>
 </Database>
