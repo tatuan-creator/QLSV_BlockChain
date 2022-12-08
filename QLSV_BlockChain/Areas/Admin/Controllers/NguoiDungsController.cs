@@ -51,6 +51,12 @@ namespace QLSV_BlockChain.Areas.Admin.Controllers
                 ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
                 return View(nguoiDung);
             }
+            if(nguoiDung.MatKhau == null)
+            {
+                ViewBag.Error = "Mật khẩu không được để trống !";
+                ViewBag.MaVaiTro = new SelectList(db.VaiTros, "MaVaitro", "TenVaiTro", nguoiDung.MaVaiTro);
+                return View(nguoiDung);
+            }
             nguoiDung.MatKhau = mahoa(nguoiDung.MatKhau);
             nguoiDung.IsActive = 0;
             if (ModelState.IsValid)
